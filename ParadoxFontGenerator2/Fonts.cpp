@@ -610,7 +610,7 @@ HRESULT GenerateBMP(const FontOptions& option, const std::set<unsigned int>& ids
         int height = DrawTexts(bitmapDC, option, ids, testWidth, true, charTable, 0, nullptr, maxSize);
         while (height >= maxSize)
         {
-            if (testWidth >= 2048)
+            if (testWidth >= 4096)
             {
                 if (overSize)
                     *overSize = true;
@@ -817,8 +817,8 @@ HRESULT BMPToPNG(const FontOptions& option, int count)
                 refbitmap->GetPixel(i,j,&pcolor);
                 unsigned int pixelColor;
                 //	tpcolor = GetPixel(bitmapdc,i,j);
-                pixelColor = pcolor.GetValue();
-                if (pixelColor != 0x00000000)
+                pixelColor = pcolor.GetAlpha();
+                if (pixelColor > 192)
                 {
                     double ratio;
 
