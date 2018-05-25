@@ -381,9 +381,9 @@ int DrawTexts(HDC bitmapDC, const FontOptions& option, const std::set<unsigned i
     HFONT EngFont;
 
     ChnFont = CreateFont(0-option.chnFontSize, 0, option.rotate ? 900 : 0, 0, option.chnBold ? FW_BOLD : FW_REGULAR, FALSE, FALSE, FALSE,
-        DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, option.chnFontName.c_str());
+        DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_NATURAL_QUALITY, DEFAULT_PITCH, option.chnFontName.c_str());
     EngFont = CreateFont(0-option.engFontSize, 0, 0, 0, option.engBold ? FW_BOLD : FW_MEDIUM, FALSE, FALSE, FALSE,
-        DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, option.engFontName.c_str());
+        DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_NATURAL_QUALITY, DEFAULT_PITCH, option.engFontName.c_str());
 
     SelectObject(bitmapDC, EngFont);
     wchar_t buf[2] = {0, 0};
